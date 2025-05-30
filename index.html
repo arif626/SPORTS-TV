@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SPORTS TV</title>
+  <style>
+    :root {
+      --bg: #f0f4ff;
+      --text: #111;
+      --card: #ffffffcc;
+      --hover: #e0e0ff;
+      --glow: rgba(0, 123, 255, 0.3);
+    }
+
+    [data-theme="dark"] {
+      --bg: #0c0c0f;
+      --text: #f8f8f8;
+      --card: #1e1e2fcc;
+      --hover: #2c2c3d;
+      --glow: rgba(0, 200, 255, 0.4);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.4s ease, color 0.4s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header, footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      z-index: 10;
+      box-shadow: 0 4px 10px var(--glow);
+    }
+
+    header { top: 0; }
+    footer {
+      bottom: 0;
+      font-size: 0.9rem;
+      justify-content: center;
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: var(--text);
+      text-shadow: 0 0 8px var(--glow);
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: transparent;
+      border: 2px solid var(--text);
+      border-radius: 999px;
+      transition: border 0.3s;
+    }
+
+    .search input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 1rem;
+      width: 160px;
+    }
+
+    .search:focus-within {
+      border-color: #007bff;
+    }
+
+    .theme-toggle button {
+      background: none;
+      border: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: var(--text);
+      transition: transform 0.4s ease;
+    }
+
+    .theme-toggle button:hover {
+      transform: rotate(360deg);
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 2rem;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 1rem;
+        gap: 1rem;
+      }
+      .search {
+        display: none;
+      }
+      footer {
+        font-size: 0.8rem;
+      }
+    }
+
+    .channel {
+      background: var(--card);
+      border-radius: 20px;
+      text-align: center;
+      padding: 1rem;
+      box-shadow: 0 0 12px var(--glow);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      transform: scale(0.98);
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    .channel:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 0 20px var(--glow), 0 4px 20px rgba(0,0,0,0.2);
+      background: var(--hover);
+    }
+
+    .channel img {
+      width: 100%;
+      height: 110px;
+      object-fit: contain;
+      margin-bottom: 0.75rem;
+      border-radius: 10px;
+    }
+
+    .channel p {
+      font-weight: 600;
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    @keyframes fadeInUp {
+      0% { transform: translateY(20px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* Popup overlay */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .overlay.hidden {
+      display: none;
+    }
+
+    .popup {
+      background: var(--card);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 25px var(--glow);
+      animation: scaleIn 0.4s ease;
+      position: relative;
+      width: 90%;
+      max-width: 720px;
+      aspect-ratio: 16 / 9;
+    }
+
+    .popup iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      background: #fff3;
+      border: none;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+      z-index: 1;
+      border-radius: 5px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+      from { transform: scale(0.85); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">SPORTS TV</div>
+  <div style="display: flex; gap: 1rem; align-items: center;">
+    <div class="search">
+      🔍 <input id="search" type="text" placeholder="Search..." />
+    </div>
+    <div class="theme-toggle">
+      <button onclick="toggleTheme()">🌓</button>
+    </div>
+  </div>
+</header>
+
+<main id="channels">Loading...</main>
+
+<footer>
+  © 2025 SPORTS TV — All Rights Reserved
+</footer>
+
+<!-- Popup Player -->
+<div id="overlay" class="overlay hidden">
+  <div class="popup">
+    <button class="close-btn" onclick="closePopup()">✖</button>
+    <iframe id="player" src="" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+  const container = document.getElementById("channels");
+  const searchInput = document.getElementById("search");
+  const popup = document.getElementById("overlay");
+  const player = document.getElementById("player");
+
+  async function fetchChannels() {
+    try {
+      const res = await fetch('https://raw.githubusercontent.com/abusaeeidx/CricHd-playlists-Auto-Update-permanent/main/api.json');
+      const data = await res.json();
+      renderChannels(data);
+    } catch (e) {
+      container.innerHTML = "<p style='padding:1rem'>⚠️ Failed to load channels.</p>";
+      console.error("Error loading channels:", e);
+    }
+  }
+
+  function renderChannels(channels) {
+    container.innerHTML = "";
+    channels.forEach((ch, index) => {
+      const el = document.createElement("div");
+      el.className = "channel";
+      el.style.animationDelay = `${index * 0.05}s`;
+      el.innerHTML = `
+        <img src="${ch.logo}" alt="${ch.name}" />
+        <p>${ch.name}</p>
+      `;
+      el.onclick = () => openPopup(ch.link);
+      container.appendChild(el);
+    });
+  }
+
+  function openPopup(url) {
+    const finalUrl = `https://anym3u8player.com/tv/video-player.php?url=${encodeURIComponent(url)}`;
+    player.src = finalUrl;
+    popup.classList.remove("hidden");
+  }
+
+  function closePopup() {
+    player.src = "";
+    popup.classList.add("hidden");
+  }
+
+  function toggleTheme() {
+    const root = document.documentElement;
+    const current = root.getAttribute("data-theme");
+    root.setAttribute("data-theme", current === "light" ? "dark" : "light");
+  }
+
+  searchInput.addEventListener("input", () => {
+    const term = searchInput.value.toLowerCase();
+    [...container.children].forEach(card => {
+      const name = card.querySelector("p").innerText.toLowerCase();
+      card.style.display = name.includes(term) ? "block" : "none";
+    });
+  });
+
+  fetchChannels();
+</script>
+<script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+
+</body>
+</html>
