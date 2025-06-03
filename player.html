@@ -77,7 +77,7 @@
         const errorMessage = document.getElementById('errorMessage');
 
         // Fetch the playlist and initialize the player
-        fetch('https://raw.githubusercontent.com/DrSujonPaul/Sujon/refs/heads/main/iptv')
+        fetch('https://sports-tv-livid.vercel.app/abcd.m3u8')
             .then(response => response.text())
             .then(playlist => {
                 populateChannelStreams(playlist); // Populate the channel stream mapping
