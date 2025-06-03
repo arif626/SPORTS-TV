@@ -130,7 +130,7 @@
         }
 
         // Fetch the playlist from the external file
-        fetch('https://raw.githubusercontent.com/DrSujonPaul/Sujon/refs/heads/main/iptv')
+        fetch('https://sports-tv-livid.vercel.app/abcd.m3u8')
             .then(response => response.text())
             .then(playlist => {
                 const channels = parseM3U8(playlist);
