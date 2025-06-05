@@ -1,9 +1,9 @@
 [
     {
-        "name": "BTV",
-        "id": "BTV",
+        "name": "BTV News",
+        "id": "BTV News",
         "logo": "https://ssl.com.bd/sites/default/files/BTV%20Logo%20Gallery.png",
-        "link": "http://38.96.178.201/live/BTV/index.m3u8",
+        "link": "http://xtv.ooo:8080/live/Amjadsc/nwl1234/245911.m3u8",
         "referer": "https://stylisheleg4nt.com",
         "origin": "https://stylisheleg4nt.com"
     },
