@@ -1,17 +1,17 @@
 [
     {
-        "name": "BTV News",
-        "id": "BTV News",
-        "logo": "https://ssl.com.bd/sites/default/files/BTV%20Logo%20Gallery.png",
-        "link": "http://xtv.ooo:8080/live/Amjadsc/nwl1234/245911.m3u8",
-        "referer": "https://stylisheleg4nt.com",
-        "origin": "https://stylisheleg4nt.com"
-    },
-    {
         "name": "BTV World",
         "id": "BTV World",
         "logo": "https://ssl.com.bd/sites/default/files/BTV%20Logo%20Gallery.png",
         "link": "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1709/output/1709.m3u8",
+        "referer": "https://stylisheleg4nt.com",
+        "origin": "https://stylisheleg4nt.com"
+    },
+    {
+        "name": "Ekattor TV",
+        "id": "Ekattor TV",
+        "logo": "https://s4.gifyu.com/images/imagea02f4314e761661d.png",
+        "link": "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1705/output/1705.m3u8",
         "referer": "https://stylisheleg4nt.com",
         "origin": "https://stylisheleg4nt.com"
     },
@@ -24,42 +24,42 @@
         "origin": "https://stylisheleg4nt.com"
     },
     {
-        "name": "Willow HD",
-        "id": "willowusa",
-        "logo": "https://raw.githubusercontent.com/abusaeeidx/Tv-Channel-Logo/heads/main/CricHD/runded/38-by-xfireflix.png",
-        "link": "https://m2.merichunidya.com:999/hls/willowusa.m3u8?md5=WaZ4JQc829yIU0p0isZdHA&expires=1749113560",
+        "name": "INDEPENDENT TV",
+        "id": "INDEPENDENT TV",
+        "logo": "https://dl.dropbox.com/s/7xwwb8hetz3w8rp/independent_tv.png",
+        "link": "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1704/output/1704.m3u8",
         "referer": "https://stylisheleg4nt.com",
         "origin": "https://stylisheleg4nt.com"
     },
     {
-        "name": "Willow HD 2",
-        "id": "willowextra",
-        "logo": "https://raw.githubusercontent.com/abusaeeidx/Tv-Channel-Logo/heads/main/CricHD/runded/8-by-xfireflix.png",
-        "link": "https://m1.merichunidya.com:999/hls/willowextra.m3u8?md5=OEUw23a9yQJ6gm2YvHe_hg&expires=1749113560",
+        "name": "NEWS 24 HD",
+        "id": "NEWS 24 HD",
+        "logo": "https://dl.dropbox.com/s/bl983avhouqd47c/news_24_bd.png",
+        "link": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/news24local.stream/playlist.m3u8",
         "referer": "https://stylisheleg4nt.com",
         "origin": "https://stylisheleg4nt.com"
     },
     {
-        "name": "Ten Sports",
-        "id": "tenspk",
-        "logo": "https://raw.githubusercontent.com/abusaeeidx/Tv-Channel-Logo/heads/main/CricHD/runded/10-by-xfireflix.png",
-        "link": "https://m3.merichunidya.com:999/hls/tenspk.m3u8?md5=OtWAVAX9jQTp70YPMksCvw&expires=1749113560",
+        "name": "DBC News",
+        "id": "DBC News",
+        "logo": "https://upload.wikimedia.org/wikipedia/commons/9/9f/DBC_News_logo.png",
+        "link": "https://app24.jagobd.com.bd/c3VydmVyX8RpbEU9Mi8xNy8yMFDDEHGcfRgzQ6NTAgdEoaeFzbF92YWxIZTO0U0ezN1IzMyfvcEdsEfeDeKiNkVN3PTOmdFsaWRtaW51aiPhnPTI2/dbcnews.stream/playlist.m3u8",
         "referer": "https://stylisheleg4nt.com",
         "origin": "https://stylisheleg4nt.com"
     },
     {
-        "name": "A Sports HD",
-        "id": "asportshd",
-        "logo": "https://raw.githubusercontent.com/abusaeeidx/Tv-Channel-Logo/heads/main/CricHD/runded/12-by-xfireflix.png",
-        "link": "https://m1.merichunidya.com:999/hls/asportshd.m3u8?md5=QE6tYux9EFOzwWtDzs-DMQ&expires=1749113560",
+        "name": "NTV",
+        "id": "NTV",
+        "logo": "https://www.ntvbd.com/sites/default/files/aggregator/2020/02/17/ntv-channel_0.jpg",
+        "link": "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1716/output/index.m3u8",
         "referer": "https://stylisheleg4nt.com",
         "origin": "https://stylisheleg4nt.com"
     },
     {
-        "name": "Sky Sports Cricket",
-        "id": "skyscric",
-        "logo": "https://raw.githubusercontent.com/abusaeeidx/Tv-Channel-Logo/heads/main/CricHD/runded/9-by-xfireflix.png",
-        "link": "https://m2.merichunidya.com:999/hls/skyscric.m3u8?md5=ChGQkLBAanZbELjM3YUs-Q&expires=1749113560",
+        "name": "Banglavision",
+        "id": "Banglavision",
+        "logo": "https://s4.gifyu.com/images/image5c0bfa6b281be803.png",
+        "link": "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1715/output/index.m3u8",
         "referer": "https://stylisheleg4nt.com",
         "origin": "https://stylisheleg4nt.com"
     },
