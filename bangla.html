@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV PLAYER</title>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+	<script disable-devtool-auto="" src="https://cdn.jsdelivr.net/npm/disable-devtool@latest"></script>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; background-color: #222; color: white; }
+        video { width: 80%; max-width: 800px; margin-top: 20px; border: 2px solid white; }
+        select { padding: 10px; margin-top: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+<h1>IPTV PLAYER</h1>
+
+<!-- Channel Selection Dropdown -->
+<select id="channelSelect">
+    <option value="">Select a Channel</option>
+</select>
+
+<!-- Video Player -->
+<video id="video" controls autoplay></video>
+
+<script>
+    var video = document.getElementById('video');
+    var channelSelect = document.getElementById('channelSelect');
+    
+    // M3U Playlist File URL
+    var playlistUrl = "https://od.lk/s/OTNfMzQ1MTU1MjBf/BANGLA.m3u8"; // Apni M3U playlist link dalain
+
+    // Function to Load M3U Playlist
+    async function loadPlaylist(url) {
+        try {
+            let response = await fetch(url);
+            let text = await response.text();
+            let lines = text.split("\n");
+            let channels = [];
+
+            for (let i = 0; i < lines.length; i++) {
+                if (lines[i].startsWith("#EXTINF")) {
+                    let name = lines[i].split(",")[1].trim();
+                    let streamUrl = lines[i + 1].trim();
+                    channels.push({ name, streamUrl });
+                }
+            }
+
+            channels.forEach(channel => {
+                let option = document.createElement("option");
+                option.value = channel.streamUrl;
+                option.textContent = channel.name;
+                channelSelect.appendChild(option);
+            });
+
+        } catch (error) {
+            console.error("Error loading playlist:", error);
+        }
+    }
+
+    // Load Playlist on Page Load
+    loadPlaylist(playlistUrl);
+
+    // Play Selected Channel
+    channelSelect.addEventListener("change", function () {
+        let streamUrl = this.value;
+        if (streamUrl) {
+            if (Hls.isSupported()) {
+                var hls = new Hls();
+                hls.loadSource(streamUrl);
+                hls.attachMedia(video);
+                hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                    video.play();
+                });
+            } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                video.src = streamUrl;
+                video.play();
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
