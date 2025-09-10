@@ -1,0 +1,26 @@
+[
+    {
+        "name": "PTV Sports",
+        "id": "ptvpk",
+        "logo": "https://raw.githubusercontent.com/abusaeeidx/Tv-Channel-Logo/heads/main/CricHD/runded/20-by-xfireflix.png",
+        "link": "https://d7.merichunidya.com:1686/hls/ptvpk.m3u8?md5=qadXjvDY1dCwG6irU8X4XA&expires=1757501689",
+        "referer": "https://stylisheleg4nt.com",
+        "origin": "https://stylisheleg4nt.com"
+    },
+    {
+        "name": "Fox Cricket 501 HD",
+        "id": "fox501",
+        "logo": "https://raw.githubusercontent.com/abusaeeidx/Tv-Channel-Logo/heads/main/CricHD/runded/6-by-xfireflix.png",
+        "link": "https://d5.merichunidya.com:1686/hls/fox501.m3u8?md5=xQjUIC-tVYIsi2-czLM7bA&expires=1757501695",
+        "referer": "https://stylisheleg4nt.com",
+        "origin": "https://stylisheleg4nt.com"
+    },
+    {
+        "name": "Sony Sports3",
+        "id": "ten1hd",
+        "logo": "https://raw.githubusercontent.com/abusaeeidx/Tv-Channel-Logo/heads/main/CricHD/runded/1000173192-modified.png",
+        "link": "https://d10.merichunidya.com:1686/hls/ten1hd.m3u8?md5=2i-5xGqr89X9H5pN4I9t-Q&expires=1757501695",
+        "referer": "https://stylisheleg4nt.com",
+        "origin": "https://stylisheleg4nt.com"
+    }
+]
